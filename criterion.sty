@@ -1,0 +1,69 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{criterion}
+
+\RequirePackage{amsmath, amsbsy, amstext, amscd, amsxtra, amsopn, amssymb}
+\everymath{\displaystyle}
+\delimitershortfall=-1pt
+
+\RequirePackage{bbm}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+% \renewcommand{\in}{\,\in\,}
+
+\newcommand{\apply}[2]{#1\left(#2\right)}
+\newcommand{\applyb}[2]{#1\!\left[#2\right]}
+
+% Variables
+
+\newcommand{\ve}[1]{\mathbf{#1}}
+\newcommand{\ma}[1]{\mathbf{#1}}
+\newcommand{\ts}[1]{\mathsf{#1}}
+
+\newcommand{\enum}[1]{\{#1\}}
+\newcommand{\range}[2]{\{#1,\dots,#2\}}
+
+\newcommand{\set}[1]{\mathcal{#1}}
+
+% Statistics
+
+\newcommand{\pr}[1]{\apply{p}{#1}}
+\newcommand{\pc}[2]{\apply{p}{#1\mid #2}}
+
+\DeclareMathOperator*{\argmax}{\mathrm{argmax}~}
+\DeclareMathOperator*{\argmin}{\mathrm{argmin}~}
+
+% \newcommand{\argmax}[2]{\underset{#2}{\operatorname{argmax}}~{#1}}
+% \newcommand{\argmin}[2]{\underset{#2}{\operatorname{argmin}}~{#1}}
+
+\newcommand{\sample}{\sim}
+\newcommand{\define}{\doteq}
+\newcommand{\generate}{\leftarrow}
+
+% distributions
+
+\newcommand{\sigmoid}{\sigma}
+
+\newcommand{\softmax}[3]{\dfrac{\apply{\exp}{#1{#2}}}{\sum_{#2^{\prime}\,\in\,#3} \apply{\exp}{#1{#2^{\prime}}}}}
+
+% Neural Networks
+
+\newcommand{\relu}[1]{\apply{\max}{\ve{0},#1}}
+
+\newcommand{\dotadd}{\oplus}
+\newcommand{\dotsub}{\ominus}
+\newcommand{\dotmul}{\odot}
+\newcommand{\dotdiv}{\oslash}
+\newcommand{\dottimes}{\otimes}
+
+\newcommand{\cat}[1]{\,\Vert^{#1}\,}
+
+\newcommand{\isin}{\,\in\,}
+
+\newcommand{\ind}[1]{\applyb{\mathbbm{1}}{#1}}
+
+% \newcommand{\pred}[1]{\hat{#1}}
+% \newcommand{\target}[1]{\hat{#1}}
+
+\endinput

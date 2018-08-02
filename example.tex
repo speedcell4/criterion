@@ -1,0 +1,171 @@
+% !TEX program = xelatex
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{geometry}
+
+\usepackage{criterion}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+\title{Criterion Example}
+\author{Izen}
+% \data{}
+
+\begin{document}
+% \maketitle
+
+\section{Symbol} % (fold)
+\label{sec:symbol}
+
+\subsection{Constant} % (fold)
+\label{sub:constant}
+
+\begin{equation*}
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+\end{equation*}
+
+\begin{equation*}
+\alpha, \beta, \gamma, \delta, \epsilon (\varepsilon), \zeta, \eta, \theta (\vartheta), \iota, \kappa, \lambda, \mu, \nu, \xi, o, \pi, \rho (\varrho), \sigma, \tau, \upsilon, \pi (\varphi), \chi, \psi, \omega
+\end{equation*}
+
+\subsection{Scalar}
+\label{sub:scalar}
+
+\begin{equation*}
+a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
+\end{equation*}
+
+\subsection{Vector}
+\label{sub:vector}
+
+\begin{equation*}
+\ve{a}, \ve{b}, \ve{c}, \ve{d}, \ve{e}, \ve{f}, \ve{g}, \ve{h}, \ve{i}, \ve{j}, \ve{k}, \ve{l}, \ve{m}, \ve{n}, \ve{o}, \ve{p}, \ve{q}, \ve{r}, \ve{s}, \ve{t}, \ve{u}, \ve{v}, \ve{w}, \ve{x}, \ve{y}, \ve{z}
+\end{equation*}
+
+\subsection{Matrix}
+\label{sub:matrix}
+
+\begin{equation*}
+\ma{A}, \ma{B}, \ma{C}, \ma{D}, \ma{E}, \ma{F}, \ma{G}, \ma{G}, \ma{I}, \ma{J}, \ma{K}, \ma{L}, \ma{M}, \ma{N}, \ma{O}, \ma{P}, \ma{Q}, \ma{R}, \ma{S}, \ma{T}, \ma{U}, \ma{V}, \ma{W}, \ma{X}, \ma{Y}, \ma{Z}
+\end{equation*}
+
+% \begin{equation*}
+% \ma{\alpha}, \ma{\beta}, \ma{\gamma}, \ma{\delta}, \ma{\epsilon} (\ma{(\varepsilon)}), \ma{\zeta}, \ma{\eta}, \ma{\theta} (\ma{\vartheta}), \ma{\iota}, \ma{\kappa}, \ma{\lambda}, \ma{\mu}, \ma{\nu}, \ma{\xi}, \ma{o}, \ma{\pi}, \ma{\rho} (\ma{\varrho}), \ma{\sigma}, \ma{\tau}, \ma{\upsilon}, \ma{\pi} (\ma{\varphi}), \ma{\chi}, \ma{\psi}, \ma{\omega}
+% \end{equation*}
+
+\subsection{Tensor}
+\label{sub:tensor}
+
+\begin{equation*}
+\ts{A}, \ts{B}, \ts{C}, \ts{D}, \ts{E}, \ts{F}, \ts{G}, \ts{G}, \ts{I}, \ts{J}, \ts{K}, \ts{L}, \ts{M}, \ts{N}, \ts{O}, \ts{P}, \ts{Q}, \ts{R}, \ts{S}, \ts{T}, \ts{U}, \ts{V}, \ts{W}, \ts{X}, \ts{Y}, \ts{Z}
+\end{equation*}
+
+\subsection{Set}
+\label{sub:set}
+
+\begin{equation*}
+\set{A}, \set{B}, \set{C}, \set{D}, \set{E}, \set{F}, \set{G}, \set{G}, \set{I}, \set{J}, \set{K}, \set{L}, \set{M}, \set{N}, \set{O}, \set{P}, \set{Q}, \set{R}, \set{S}, \set{T}, \set{U}, \set{V}, \set{W}, \set{X}, \set{Y}, \set{Z}
+\end{equation*}
+
+\section{Statistics}
+\label{sec:statistics}
+
+\subsection{Probability} % (fold)
+\label{sub:probability}
+
+\begin{equation}
+	x\sample \set{X}
+\end{equation}
+
+\begin{equation}
+	x\define \set{X}
+\end{equation}
+
+\begin{equation}
+	x\generate \set{X}
+\end{equation}
+
+\begin{equation*}
+	\pr{\alpha},\pr{a}, \pr{\ve{a}}, \pr{\ma{A}}, \pr{\ts{A}}, \pr{\set{A}}
+\end{equation*}
+
+\begin{equation*}
+	\pc{\alpha}{\beta},\pc{a}{b}, \pc{\ve{a}}{\ve{b}}, \pc{\ma{A}}{\ma{B}}, \pc{\ts{A}}{\ts{B}}, \pc{\set{A}}{\set{B}}
+\end{equation*}
+
+\section{Indexing} % (fold)
+\label{sec:indexing}
+
+\begin{align*}
+	& \argmax_{a\isin\set{A}}{\pr{a}} \\
+	& \argmin_{x\isin\set{X}}{\pc{x}{y}} \\
+\end{align*}
+
+\section{Distribution} % (fold)
+\label{sec:distribution}
+
+\begin{equation*}
+	\apply{\sigmoid}{x}
+\end{equation*}
+
+\begin{equation*}
+	\softmax{\pr}{x}{\set{X}}
+\end{equation*}
+
+% section distribution (end)
+
+% section indexing (end)
+
+\section{Neural Networks} % (fold)
+\label{sec:neural_networks}
+
+\subsection{Activation} % (fold)
+\label{sub:activation}
+
+\begin{equation*}
+	\relu{\ve{x}}
+\end{equation*}
+
+\begin{equation}
+	\apply{\tanh}{\ve{x}}
+\end{equation}
+
+\begin{align*}
+	\enum{0,1} \\
+	\range{a}{z}
+\end{align*}
+
+\begin{align*}
+	\ve{x} \dotadd \ve{y} \\
+	\ve{x} \dotsub \ve{y} \\
+	\ve{x} \dotmul \ve{y} \\
+	\ve{x} \dotdiv \ve{y} \\
+	\ve{x} \dottimes \ve{y} \\
+\end{align*}
+
+\begin{equation}
+	\ve{x} \cat{1} \ve{y}
+\end{equation}
+
+% subsection activation (end)
+
+% section neural_networks (end)
+
+% \begin{equation}
+% 	\hat{y} = \argmax{\pc{y_{t}}{\ve{h}_{t-1},y_{t-1};\theta}}{y\isin\set{Y}}
+% \end{equation}
+
+\begin{equation}
+	\ell_\theta = \E -\apply{\log}{\pc{y^{\ast}_{t}}{\ve{h}_{t-1},y_{t-1};\theta}}
+\end{equation}
+
+\begin{equation}
+	\ind{x}
+\end{equation}
+
+% \begin{equation}
+% 	\argmm_{2}{2}
+% \end{equation}
+	
+\end{document}
