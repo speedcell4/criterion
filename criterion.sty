@@ -26,6 +26,16 @@
 
 \newcommand{\set}[1]{\mathcal{#1}}
 
+\newcommand{\bin}{\mathbbm{1}}
+\newcommand{\nat}{\set{N}}
+\newcommand{\real}{\set{R}}
+
+% Calculus
+
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\pdn}[3]{\dfrac{\partial^{#3} #1}{\partial {#2}^{#3}}}
+\newcommand{\pds}[3]{\dfrac{\partial^2 #1}{\partial #2\,\partial #3}}
+
 % Statistics
 
 \newcommand{\pr}[1]{\apply{p}{#1}}
@@ -37,25 +47,42 @@
 % \newcommand{\argmax}[2]{\underset{#2}{\operatorname{argmax}}~{#1}}
 % \newcommand{\argmin}[2]{\underset{#2}{\operatorname{argmin}}~{#1}}
 
+\newcommand{\obey}{\sim}
 \newcommand{\sample}{\sim}
 \newcommand{\define}{\doteq}
 \newcommand{\generate}{\leftarrow}
+
+% linear algebra
+
+% T -> T -> T :: elementwise
+
+\newcommand{\debugwidth}[1]{#1 \tag{\setbox0=\hbox{$#1$} \the\wd0}}
+
+\newcommand{\ewadd}{\oplus}
+\newcommand{\ewsub}{\ominus}
+\newcommand{\ewmul}{\odot}
+\newcommand{\ewdiv}{\oslash}
+
+% TODO fix this width
+\newcommand{\conv}{\mathbin{*}}
+
+% W -> V -> V
+
+\newcommand{\mvmul}{\mathbin{\cdot}}
+
+\newcommand{\tr}{\!\top}
+\newcommand{\inv}{\!\text{-}1}
+\newcommand{\invtr}{\text{-}\!\top}
 
 % distributions
 
 \newcommand{\sigmoid}{\sigma}
 
-\newcommand{\softmax}[3]{\dfrac{\apply{\exp}{#1{#2}}}{\sum_{#2^{\prime}\,\in\,#3} \apply{\exp}{#1{#2^{\prime}}}}}
+\newcommand{\softmax}[3]{\dfrac{\apply{\exp}{#1{#2}}}{\sum_{#2^{\mathrm{\prime}}\,\in\,#3} \apply{\exp}{#1{#2^{\mathrm{\prime}}}}}}
 
 % Neural Networks
 
 \newcommand{\relu}[1]{\apply{\max}{\ve{0},#1}}
-
-\newcommand{\dotadd}{\oplus}
-\newcommand{\dotsub}{\ominus}
-\newcommand{\dotmul}{\odot}
-\newcommand{\dotdiv}{\oslash}
-\newcommand{\dottimes}{\otimes}
 
 \newcommand{\cat}[1]{\,\Vert^{#1}\,}
 
@@ -63,7 +90,21 @@
 
 \newcommand{\ind}[1]{\applyb{\mathbbm{1}}{#1}}
 
+\newcommand{\linear}[2]{\ma{W}_{\!#2}\!\cdot\!#1+\ve{b}_{#2}}
+
+% \newcommand{\vvcon}{*}
+
 % \newcommand{\pred}[1]{\hat{#1}}
 % \newcommand{\target}[1]{\hat{#1}}
+
+\newcommand{\normdist}[2]{\apply{\mathcal{N}}{#1,#2}}
+
+\newcommand{\reduceset}[4]{#4_{#2\isin#3}{\apply{#1}{#2}}}
+\newcommand{\maxset}[3]{\reduceset{#1}{#2}{#3}{\max}}
+\newcommand{\minset}[3]{\reduceset{#1}{#2}{#3}{\min}}
+\newcommand{\sumset}[3]{\reduceset{#1}{#2}{#3}{\sum}}
+\newcommand{\meanset}[3]{\cfrac{1}{\vert #3 \vert}\,\sumset{#1}{#2}{#3}}
+
+\newcommand{\mapset}[3]{\left\{\apply{#1}{#2}\mid #2\isin#3\right\}}
 
 \endinput

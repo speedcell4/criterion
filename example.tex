@@ -6,7 +6,7 @@
 
 \usepackage{criterion}
 
-\DeclareMathOperator*{\E}{\mathbb{E}}
+\DeclareMathOperator{\expect}{\mathop{\mathbb{E}}}
 
 \title{Criterion Example}
 \author{Izen}
@@ -27,6 +27,10 @@
 
 \begin{equation*}
 \alpha, \beta, \gamma, \delta, \epsilon (\varepsilon), \zeta, \eta, \theta (\vartheta), \iota, \kappa, \lambda, \mu, \nu, \xi, o, \pi, \rho (\varrho), \sigma, \tau, \upsilon, \pi (\varphi), \chi, \psi, \omega
+\end{equation*}
+
+\begin{equation*}
+	\bin, \nat, \real
 \end{equation*}
 
 \subsection{Scalar}
@@ -74,17 +78,17 @@ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
 \subsection{Probability} % (fold)
 \label{sub:probability}
 
-\begin{equation}
+\begin{equation*}
 	x\sample \set{X}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 	x\define \set{X}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 	x\generate \set{X}
-\end{equation}
+\end{equation*}
 
 \begin{equation*}
 	\pr{\alpha},\pr{a}, \pr{\ve{a}}, \pr{\ma{A}}, \pr{\ts{A}}, \pr{\set{A}}
@@ -127,9 +131,9 @@ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
 	\relu{\ve{x}}
 \end{equation*}
 
-\begin{equation}
+\begin{equation*}
 	\apply{\tanh}{\ve{x}}
-\end{equation}
+\end{equation*}
 
 \begin{align*}
 	\enum{0,1} \\
@@ -137,35 +141,67 @@ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
 \end{align*}
 
 \begin{align*}
-	\ve{x} \dotadd \ve{y} \\
-	\ve{x} \dotsub \ve{y} \\
-	\ve{x} \dotmul \ve{y} \\
-	\ve{x} \dotdiv \ve{y} \\
-	\ve{x} \dottimes \ve{y} \\
+	\debugwidth{\ve{x} \ewadd \ve{y}} \\
+	\debugwidth{\ve{x} \ewsub \ve{y}} \\
+	\debugwidth{\ve{x} \ewmul \ve{y}} \\
+	\debugwidth{\ve{x} \ewdiv \ve{y}} \\
+	\debugwidth{\ve{x} \conv \ve{y}}
 \end{align*}
 
 \begin{equation}
-	\ve{x} \cat{1} \ve{y}
+	x \mathbin{\overline{*} }y 
 \end{equation}
+
+\begin{align*}
+	\ma{A}^{\tr} \\
+	\ma{A}^{\inv} \\
+	\ma{A}^{\invtr}
+\end{align*}
 
 % subsection activation (end)
 
 % section neural_networks (end)
 
-% \begin{equation}
+% \begin{equation*}
 % 	\hat{y} = \argmax{\pc{y_{t}}{\ve{h}_{t-1},y_{t-1};\theta}}{y\isin\set{Y}}
-% \end{equation}
+% \end{equation*}
 
-\begin{equation}
-	\ell_\theta = \E -\apply{\log}{\pc{y^{\ast}_{t}}{\ve{h}_{t-1},y_{t-1};\theta}}
-\end{equation}
-
-\begin{equation}
+\begin{equation*}
 	\ind{x}
-\end{equation}
+\end{equation*}
 
-% \begin{equation}
-% 	\argmm_{2}{2}
-% \end{equation}
+\begin{align*}
+	\ve{i}_t &= \apply{\sigmoid}{\linear{\ve{x}_t}{i}} \\
+	\ve{f}_t &= \apply{\sigmoid}{\linear{\ve{x}_t}{f}} \\
+	\ve{o}_t &= \apply{\sigmoid}{\linear{\ve{x}_t}{o}} \\
+	\ve{g}_t &= \apply{\tanh}{\linear{\ve{x}_t}{g}} \\
+	\ve{c}_t &= \ve{i}_t \ewmul \ve{f}_t
+\end{align*}
+
+\begin{align*}
+	-\apply{\log}{\pc{y_{t}}{\ve{h}_{t-1},y_{t-1};\theta}} \\
+	\epsilon \obey \normdist{0}{(\sigma/t)^{2}}
+\end{align*}
+
+\begin{align*}
+	\maxset{f}{x}{\mathcal{X}} \\
+	\minset{f}{x}{\mathcal{X}} \\
+	\sumset{f}{x}{\mathcal{X}} \\
+	\meanset{f}{x}{\mathcal{X}} \\
+\end{align*}
+
+\begin{equation*}
+	\mapset{f}{x}{\mathcal{X}}
+\end{equation*}
+
+\begin{align*}
+	\pd{\apply{f}{x}}{x} \\
+	\pdn{\apply{f}{x}}{x}{2} \\
+	\pds{\apply{f}{x}}{x}{y} \\
+\end{align*}
+
+\begin{equation}
+	\expect_{s_{t}\obey E,a_i\obey \pi}{ \apply{R}{s_{t},a_{t}}}
+\end{equation}
 	
 \end{document}
