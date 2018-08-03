@@ -6,7 +6,13 @@
 
 \usepackage{criterion}
 
-\DeclareMathOperator{\expect}{\mathop{\mathbb{E}}}
+% \usepackage{adjustbox}
+
+% \DeclareMathOperator*{\expect}{\mathop{\adjustbox{stack=cc}{\mbox{\Huge$\mathbb{E}$}}}}
+% \def\expect{\mathop{\operator@font max}}
+
+% \newcommand{\Ress}{\mathop{\hbox{Res}}}
+% \DeclareMathOperator{\Ress}{Res}
 
 \title{Criterion Example}
 \author{Izen}
@@ -145,7 +151,7 @@ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
 	\debugwidth{\ve{x} \ewsub \ve{y}} \\
 	\debugwidth{\ve{x} \ewmul \ve{y}} \\
 	\debugwidth{\ve{x} \ewdiv \ve{y}} \\
-	\debugwidth{\ve{x} \conv \ve{y}}
+	% \debugwidth{\ve{x} \conv \ve{y}}
 \end{align*}
 
 \begin{equation}
@@ -201,7 +207,31 @@ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
 \end{align*}
 
 \begin{equation}
-	\expect_{s_{t}\obey E,a_i\obey \pi}{ \apply{R}{s_{t},a_{t}}}
+	\applyb{\expect_{s_{t}\obey E,a_i\obey \pi}}{\apply{R}{s_{t},a_{t}}}
 \end{equation}
+
+% \begin{equation}
+% 	\apply{\mathop{\mathcal{C}}_{\left(1\times 3\right)\mathit{@}\left(1\times 1\right)}}{\ve{x};\ma{W}\isin\real^{1 \times 3}}
+% \end{equation}
+
+\begin{equation}
+	\ve{y}=\conv{1,3}{\ve{x}}{l}
+\end{equation}
+
+
+\section{Reinforcement Learning} % (fold)
+\label{sec:reinforcement_learning}
+
+\newcommand{\grad}[3]{\nabla_{#3}\,\apply{#1}{#2}}
+\newcommand{\gradn}[4]{\nabla_{#3}^{#4}\,\apply{#1}{#2}}
+
+
+\begin{align*}
+	\grad{f}{\ve{x}}{\ve{x}} \\
+	\gradn{f}{\ve{x}}{\ve{x}}{2}
+\end{align*}
+
+
+% section reinforcement_learning (end)
 	
 \end{document}

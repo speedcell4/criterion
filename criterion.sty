@@ -7,15 +7,30 @@
 \delimitershortfall=-1pt
 
 \RequirePackage{bbm}
+\RequirePackage{adjustbox}
 
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 
 % \renewcommand{\in}{\,\in\,}
 
-\newcommand{\apply}[2]{#1\left(#2\right)}
-\newcommand{\applyb}[2]{#1\!\left[#2\right]}
+\newcommand{\prth}[1]{\left(#1\right)}
+\newcommand{\brkt}[1]{\left[#1\right]}
+
+\newcommand{\applyp}[2]{#1\!\prth{#2}}
+\newcommand{\applyb}[2]{#1\!\brkt{#2}}
+\newcommand{\apply}{\applyp}
 
 % Variables
+
+\newcommand{\mathlarge}[1]{\adjustbox{stack=cc}{\mbox{\large$#1$}}}
+\newcommand{\mathLarge}[1]{\adjustbox{stack=cc}{\mbox{\Large$#1$}}}
+\newcommand{\mathLARGE}[1]{\adjustbox{stack=cc}{\mbox{\LARGE$#1$}}}
+\newcommand{\mathhuge}[1]{\adjustbox{stack=cc}{\mbox{\huge$#1$}}}
+\newcommand{\mathHuge}[1]{\adjustbox{stack=cc}{\mbox{\Huge$#1$}}}
+
+\DeclareMathOperator{\expect}{\mathop{\mathLarge{\mathbb{E}}}}
+% \DeclareMathOperator{\conv}{\mathop{\mathLarge{\mathbb{C}}}}
+% \DeclareMathOperator*{\expect}{\mathop{\adjustbox{stack=cc}{\mbox{\huge$\mathbb{E}$}}}}
 
 \newcommand{\ve}[1]{\mathbf{#1}}
 \newcommand{\ma}[1]{\mathbf{#1}}
@@ -64,7 +79,7 @@
 \newcommand{\ewdiv}{\oslash}
 
 % TODO fix this width
-\newcommand{\conv}{\mathbin{*}}
+% \newcommand{\conv}{\mathbin{*}}
 
 % W -> V -> V
 
@@ -90,7 +105,13 @@
 
 \newcommand{\ind}[1]{\applyb{\mathbbm{1}}{#1}}
 
-\newcommand{\linear}[2]{\ma{W}_{\!#2}\!\cdot\!#1+\ve{b}_{#2}}
+\newcommand{\shape}[1]{[#1]}
+
+\newcommand{\linearnb}[2]{\ma{W}_{\!#2}\mvmul#1}
+\newcommand{\linear}[2]{\linearnb{#1}{#2}+\ve{b}_{#2}}
+
+\newcommand{\convnb}[3]{\ma{W}_{\!#3}^{\shape{#1}}\mathop{\ast}#2}
+\newcommand{\conv}[3]{\convnb{#1}{#2}{#3}+\ve{b}_{#3}}
 
 % \newcommand{\vvcon}{*}
 
