@@ -15,9 +15,11 @@
 
 \newcommand{\prth}[1]{\left(#1\right)}
 \newcommand{\brkt}[1]{\left[#1\right]}
+\newcommand{\crly}[1]{\left\{#1\right\}}
+
 
 \newcommand{\applyp}[2]{#1\!\prth{#2}}
-\newcommand{\applyb}[2]{#1\!\brkt{#2}}
+\newcommand{\applyb}[2]{#1\brkt{#2}}
 \newcommand{\apply}{\applyp}
 
 % Variables
@@ -36,8 +38,8 @@
 \newcommand{\ma}[1]{\mathbf{#1}}
 \newcommand{\ts}[1]{\mathsf{#1}}
 
-\newcommand{\enum}[1]{\{#1\}}
-\newcommand{\range}[2]{\{#1,\dots,#2\}}
+\newcommand{\enum}[1]{\crly{#1}}
+\newcommand{\range}[2]{\crly{#1,\dots,#2}}
 
 \newcommand{\set}[1]{\mathcal{#1}}
 
@@ -59,13 +61,18 @@
 \DeclareMathOperator*{\argmax}{\mathrm{argmax}~}
 \DeclareMathOperator*{\argmin}{\mathrm{argmin}~}
 
+% \DeclareMathOperator*{\enc}{\mathrm{enc}~}
+% \DeclareMathOperator*{\dec}{\mathrm{dec}~}
+
 % \newcommand{\argmax}[2]{\underset{#2}{\operatorname{argmax}}~{#1}}
 % \newcommand{\argmin}[2]{\underset{#2}{\operatorname{argmin}}~{#1}}
 
-\newcommand{\obey}{\sim}
-\newcommand{\sample}{\sim}
-\newcommand{\define}{\doteq}
-\newcommand{\generate}{\leftarrow}
+\newcommand{\obey}{\mathrel{\sim}} 
+\newcommand{\sample}{\mathrel{\sim}}
+\newcommand{\define}{\mathrel{\doteq}}
+\newcommand{\generate}{\mathrel{\leftarrow}}
+\newcommand{\shuffle}{\mathrel{\reflectbox{$\leadsto$}}}
+% \newcommand{\shuffle}{\mathrel{\leftsquigarrow}}
 
 % linear algebra
 
@@ -113,19 +120,30 @@
 \newcommand{\convnb}[3]{\ma{W}_{\!#3}^{\shape{#1}}\mathop{\ast}#2}
 \newcommand{\conv}[3]{\convnb{#1}{#2}{#3}+\ve{b}_{#3}}
 
+\newcommand{\pred}[1]{\hat{#1}}
+\newcommand{\optm}[1]{#1^{\ast}}
+\newcommand{\local}[1]{\tilde{#1}}
+\newcommand{\idx}[1]{#1^{\prime}}
+
 % \newcommand{\vvcon}{*}
 
 % \newcommand{\pred}[1]{\hat{#1}}
 % \newcommand{\target}[1]{\hat{#1}}
 
-\newcommand{\normdist}[2]{\apply{\mathcal{N}}{#1,#2}}
+\newcommand{\uniform}[2]{\apply{\mathcal{U}}{#1,#2}}
+\newcommand{\binomial}[2]{\apply{\mathcal{B}}{#1,#2}}
+\newcommand{\bernoulli}[1]{\binomial{1}{#1}}
+\newcommand{\gaussian}[2]{\apply{\mathcal{N}}{#1,#2}}
+\newcommand{\categorial}[1]{\apply{\mathcal{C}}{#1}}
 
 \newcommand{\reduceset}[4]{#4_{#2\isin#3}{\apply{#1}{#2}}}
 \newcommand{\maxset}[3]{\reduceset{#1}{#2}{#3}{\max}}
 \newcommand{\minset}[3]{\reduceset{#1}{#2}{#3}{\min}}
 \newcommand{\sumset}[3]{\reduceset{#1}{#2}{#3}{\sum}}
-\newcommand{\meanset}[3]{\cfrac{1}{\vert #3 \vert}\,\sumset{#1}{#2}{#3}}
+\newcommand{\avgset}[3]{\cfrac{1}{\vert #3 \vert}\,\sumset{#1}{#2}{#3}}
 
-\newcommand{\mapset}[3]{\left\{\apply{#1}{#2}\mid #2\isin#3\right\}}
+\newcommand{\mapset}[3]{\crly{\apply{#1}{#2}\mid #2\isin#3}}
+
+\newcommand{\aprx}{\mathrel{\mapsto}}
 
 \endinput
