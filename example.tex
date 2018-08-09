@@ -1,0 +1,395 @@
+% !TEX program = xelatex
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{geometry}
+
+\usepackage{criterion}
+% \usepackage{dsfont}
+
+% \usepackage{adjustbox}
+
+% \DeclareMathOperator*{\expect}{\mathop{\adjustbox{stack=cc}{\mbox{\Huge$\mathbb{E}$}}}}
+% \def\expect{\mathop{\operator@font max}}
+
+% \newcommand{\Ress}{\mathop{\hbox{Res}}}
+% \DeclareMathOperator{\Ress}{Res}
+
+\title{Criterion Example}
+\author{Izen}
+% \data{}
+
+\begin{document}
+% \maketitle
+
+\section{Symbol} % (fold)
+\label{sec:symbol}
+
+\subsection{Constant} % (fold)
+\label{sub:constant}
+
+\begin{equation*}
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+\end{equation*}
+
+\begin{equation*}
+\alpha, \beta, \gamma, \delta, \epsilon (\varepsilon), \zeta, \eta, \theta (\vartheta), \iota, \kappa, \lambda, \mu, \nu, \xi, o, \pi, \rho (\varrho), \sigma, \tau, \upsilon, \pi (\varphi), \chi, \psi, \omega
+\end{equation*}
+
+\begin{equation*}
+	\bin, \nat, \real
+\end{equation*}
+
+\subsection{Scalar}
+\label{sub:scalar}
+
+\begin{equation*}
+a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
+\end{equation*}
+
+\subsection{Vector}
+\label{sub:vector}
+
+\begin{equation*}
+\ve{a}, \ve{b}, \ve{c}, \ve{d}, \ve{e}, \ve{f}, \ve{g}, \ve{h}, \ve{i}, \ve{j}, \ve{k}, \ve{l}, \ve{m}, \ve{n}, \ve{o}, \ve{p}, \ve{q}, \ve{r}, \ve{s}, \ve{t}, \ve{u}, \ve{v}, \ve{w}, \ve{x}, \ve{y}, \ve{z}
+\end{equation*}
+
+\subsection{Matrix}
+\label{sub:matrix}
+
+\begin{equation*}
+\ma{A}, \ma{B}, \ma{C}, \ma{D}, \ma{E}, \ma{F}, \ma{G}, \ma{H}, \ma{I}, \ma{J}, \ma{K}, \ma{L}, \ma{M}, \ma{N}, \ma{O}, \ma{P}, \ma{Q}, \ma{R}, \ma{S}, \ma{T}, \ma{U}, \ma{V}, \ma{W}, \ma{X}, \ma{Y}, \ma{Z}
+\end{equation*}
+
+% \begin{equation*}
+% \ma{\alpha}, \ma{\beta}, \ma{\gamma}, \ma{\delta}, \ma{\epsilon} (\ma{(\varepsilon)}), \ma{\zeta}, \ma{\eta}, \ma{\theta} (\ma{\vartheta}), \ma{\iota}, \ma{\kappa}, \ma{\lambda}, \ma{\mu}, \ma{\nu}, \ma{\xi}, \ma{o}, \ma{\pi}, \ma{\rho} (\ma{\varrho}), \ma{\sigma}, \ma{\tau}, \ma{\upsilon}, \ma{\pi} (\ma{\varphi}), \ma{\chi}, \ma{\psi}, \ma{\omega}
+% \end{equation*}
+
+\subsection{Tensor}
+\label{sub:tensor}
+
+\begin{equation*}
+\ts{A}, \ts{B}, \ts{C}, \ts{D}, \ts{E}, \ts{F}, \ts{G}, \ts{H}, \ts{I}, \ts{J}, \ts{K}, \ts{L}, \ts{M}, \ts{N}, \ts{O}, \ts{P}, \ts{Q}, \ts{R}, \ts{S}, \ts{T}, \ts{U}, \ts{V}, \ts{W}, \ts{X}, \ts{Y}, \ts{Z}
+\end{equation*}
+
+\subsection{Set}
+\label{sub:set}
+
+\begin{equation*}
+\set{A}, \set{B}, \set{C}, \set{D}, \set{E}, \set{F}, \set{G}, \set{H}, \set{I}, \set{J}, \set{K}, \set{L}, \set{M}, \set{N}, \set{O}, \set{P}, \set{Q}, \set{R}, \set{S}, \set{T}, \set{U}, \set{V}, \set{W}, \set{X}, \set{Y}, \set{Z}
+\end{equation*}
+
+\section{Statistics}
+\label{sec:statistics}
+
+\subsection{Probability} % (fold)
+\label{sub:probability}
+
+\begin{align*}
+	x\sample \set{X} \tag{sample} \\
+	x\define \set{X} \tag{define} \\
+	x\generate \set{X} \tag{generate} \\
+	x\shuffle \set{X} \tag{shuffle}
+\end{align*}
+
+\begin{equation*}
+	\pr{\alpha},\pr{a}, \pr{\ve{a}}, \pr{\ma{A}}, \pr{\ts{A}}, \pr{\set{A}}
+\end{equation*}
+
+\begin{equation*}
+	\pc{\alpha}{\beta},\pc{a}{b}, \pc{\ve{a}}{\ve{b}}, \pc{\ma{A}}{\ma{B}}, \pc{\ts{A}}{\ts{B}}, \pc{\set{A}}{\set{B}}
+\end{equation*}
+
+\section{Indexing} % (fold)
+\label{sec:indexing}
+
+\begin{align*}
+	& \argmax_{a\isin\set{A}}{\pr{a}} \\
+	& \argmin_{x\isin\set{X}}{\pc{x}{y}} \\
+\end{align*}
+
+\section{Distribution} % (fold)
+\label{sec:distribution}
+
+\begin{equation*}
+	\apply{\sigmoid}{x}
+\end{equation*}
+
+\begin{equation*}
+	\softmax{\pr}{x}{\set{X}}
+\end{equation*}
+
+% section distribution (end)
+
+% section indexing (end)
+
+\section{Neural Networks} % (fold)
+\label{sec:neural_networks}
+
+\subsection{Activation} % (fold)
+\label{sub:activation}
+
+\begin{equation*}
+	\relu{\ve{x}}
+\end{equation*}
+
+\begin{equation*}
+	\apply{\tanh}{\ve{x}}
+\end{equation*}
+
+\begin{align*}
+	\enum{0,1} \\
+	\range{a}{z}
+\end{align*}
+
+\begin{align*}
+	\debugwidth{\ve{x} \ewadd \ve{y}} \\
+	\debugwidth{\ve{x} \ewsub \ve{y}} \\
+	\debugwidth{\ve{x} \ewmul \ve{y}} \\
+	\debugwidth{\ve{x} \ewdiv \ve{y}} \\
+	% \debugwidth{\ve{x} \conv \ve{y}}
+\end{align*}
+
+\begin{equation}
+	x \mathbin{\overline{*} }y 
+\end{equation}
+
+\begin{align*}
+	\ma{A}^{\tr} \\
+	\ma{A}^{\inv} \\
+	\ma{A}^{\invtr}
+\end{align*}
+
+% subsection activation (end)
+
+% section neural_networks (end)
+
+% \begin{equation*}
+% 	\hat{y} = \argmax{\pc{y_{t}}{\ve{h}_{t-1},y_{t-1};\theta}}{y\isin\set{Y}}
+% \end{equation*}
+
+\begin{equation*}
+	\ind{x}
+\end{equation*}
+
+\begin{align*}
+	\ve{i}_t &= \apply{\sigmoid}{\linear{\ve{x}_t}{i}} \\
+	\ve{f}_t &= \apply{\sigmoid}{\linear{\ve{x}_t}{f}} \\
+	\ve{o}_t &= \apply{\sigmoid}{\linear{\ve{x}_t}{o}} \\
+	\ve{g}_t &= \apply{\tanh}{\linear{\ve{x}_t}{g}} \\
+	\ve{c}_t &= \ve{i}_t \ewmul \ve{f}_t
+\end{align*}
+
+\begin{align*}
+	& -\apply{\log}{\pc{y_{t}}{\ve{h}_{t-1},y_{t-1};\theta}} \\
+	& \epsilon \obey \uniform{a}{b} \\
+	& \epsilon \obey \gaussian{0}{(\sigma/t)^{2}} \\
+	& \epsilon \obey \bernoulli{p} \\
+	& \epsilon \obey \binomial{1}{(\sigma/t)^{2}} \\
+\end{align*}
+
+\begin{align*}
+	\maxset{f}{x}{\mathcal{X}} \\
+	\minset{f}{x}{\mathcal{X}} \\
+	\sumset{f}{x}{\mathcal{X}} \\
+	\avgset{f}{x}{\mathcal{X}} \\
+\end{align*}
+
+\begin{equation*}
+	\mapset{f}{x}{\mathcal{X}}
+\end{equation*}
+
+\begin{align*}
+	\pd{\apply{f}{x}}{x} \\
+	\pdn{\apply{f}{x}}{x}{2} \\
+	\pds{\apply{f}{x}}{x}{y} \\
+\end{align*}
+
+\begin{equation}
+	\applyb{\expect_{s_{t}\obey E,a_i\obey \pi}}{\apply{R}{s_{t},a_{t}}}
+\end{equation}
+
+% \begin{equation}
+% 	\apply{\mathop{\mathcal{C}}_{\left(1\times 3\right)\mathit{@}\left(1\times 1\right)}}{\ve{x};\ma{W}\isin\real^{1 \times 3}}
+% \end{equation}
+
+\begin{equation}
+	\ve{y}=\conv{1,3}{\ve{x}}{l}
+\end{equation}
+
+
+\section{Reinforcement Learning} % (fold)
+\label{sec:reinforcement_learning}
+
+\newcommand{\grad}[3]{\nabla_{#3}\,\apply{#1}{#2}}
+\newcommand{\gradn}[4]{\nabla_{#3}^{#4}\,\apply{#1}{#2}}
+
+
+\begin{align*}
+	\grad{f}{\ve{x}}{\ve{x}} \\
+	\gradn{f}{\ve{x}}{\ve{x}}{2}
+\end{align*}
+
+\begin{equation}
+	{\applyb{\expect}{\pd{\apply{f}{x}}{x}}}, \optm{y}, \idx{y}
+\end{equation}
+
+% \begin{equation}
+% 	\applyb{\enc_{1}}{1}
+% \end{equation}
+
+\begin{equation}
+	\local{\ve{y}}
+\end{equation}
+
+\begin{equation}
+	\prth{x}, \brkt{x}, \crly{x}
+\end{equation}
+
+\section{Decoding} % (fold)
+\label{sec:decoding}
+
+\begin{equation}
+	\pred{y}_{t} = \argmax_{\idx{y}\isin\set{V}} \pr{\ve{h}_{t-1},y_{t-1}}
+\end{equation}
+
+\begin{equation}
+	\pred{y}_{t} = \argmax_{\idx{y}\isin\set{V}} \pr{\ve{h}_{t-1},\pred{y}_{t-1}}
+\end{equation}
+
+\begin{align}
+	\pred{y}_{t} =& \argmax_{\idx{y}\isin\set{V}} \pr{\ve{h}_{t-1}+\epsilon,y_{t-1}} \\
+	\epsilon&\obey\gaussian{0}{1}
+\end{align}
+
+\newcommand{\actor}[3]{\apply{\pi}{#2 \mid #1;\theta_{#3}}}
+
+\begin{align}
+	\pred{y}_{t} =& \argmax_{\idx{y}\isin\set{V}} \pr{\ve{h}_{t-1}+\ve{a},y_{t-1}} \\
+	\ve{a} &= \actor{\ve{x}}{\ve{a}}{\pi} \tag{actor}
+\end{align}
+
+% section decoding (end)
+
+\begin{align*}
+	S_{t} & \aprx G_{t} \tag{Monte Carlo} \\
+	S_{t} & \aprx \applyb{\expect}{R_{t+1}+\gamma\apply{\pred{v}}{S_{t+1}}} \tag{Dynamic Programming}\\
+	S_{t} & \aprx R_{t+1}+\gamma\apply{\pred{v}}{S_{t+1}} \tag{TD(0)} \\
+	S_{t} & \aprx R_{t+1}+\gamma R_{t+2}+\dots \gamma^{n}\apply{\pred{v}}{S_{t+n}} \tag{n-step TD(0)}
+\end{align*}
+
+\begin{equation}
+	\apply{\overline{\mathrm{VE}}}{\theta_{v}}\define\applyb{\expect_{s\obey \mu}}{\apply{v_{\pi}}{s}-\apply{\pred{v}_{\pi}}{s;\theta_{v}}} \tag{mean squared value error}
+\end{equation}
+
+\begin{equation}
+	a' a^{\prime}
+\end{equation}
+
+\begin{equation}
+	{}^{\epsilon}\categorial{\ve{x}}
+\end{equation}
+
+\begin{align*}
+	\ell_{\pi}&=\applyb{\expect_{\ve{s}_{t}\obey \apply{\mu}{s},a_{t}\obey\pi}}{-{\prth{r_{t}-\apply{\pred{v}}{\ve{s}_{t};\theta_{\pred{v}}}}\cdot\apply{\log}{\apply{\pi}{a_{t} \mid \ve{s}_{t};\theta_{\pi}}}}} \\
+	\ell_{\pred{v}} &= \applyb{\expect_{\ve{s}_{t}\obey \apply{\mu}{s},a_{t}\obey\pi}}{\prth{r_{t}-\apply{\pred{v}}{\ve{s}_{t};\theta_{\pred{v}}}}^{2}}
+\end{align*}
+
+\newcommand{\env}{\mathpzc{E}}
+
+\subsection{Q Learning} % (fold)
+\label{sub:q_learning}
+
+\begin{align}
+	A \generate \apply{\pi}{\cdot \mid S} \\
+	S',R\generate \apply{\env}{A} \\
+	A' \generate \argmax_{A'\isin\set{A}}\apply{\pi}{\cdot \mid S'} \\
+	S \to R + \gamma \apply{Q}{S',A'}
+\end{align}
+
+% subsection q_learning (end)
+
+\subsection{Sarsa} % (fold)
+\label{sub:sarsa}
+
+\begin{align}
+	A \generate \apply{\pi}{\cdot \mid S} \\
+	S',R\generate \apply{\env}{A} \\
+	A' \generate \apply{\pi}{\cdot \mid S'} \\
+	S \to R + \gamma \apply{Q}{S',A'}
+\end{align}
+
+\subsection{TD($\lambda$)} % (fold)
+\label{sub:td}
+
+\begin{align*}
+	A  \generate \apply{\pi}{\cdot \mid S} \\
+	S',R \generate \apply{\env}{A} \\
+	\ve{z} \generate \gamma \lambda \ve{z} + \grad{\pred{v}} {S;\ve{w}}{\ve{w}} \\
+	S \to  R+\gamma\apply{Q}{S;\ve{w}} 
+\end{align*}
+
+% subsection td (end)
+
+% subsection sarsa (end)
+
+\subsection{Expected Sarsa} % (fold)
+\label{sub:expected_sarsa}
+
+% subsection expected_sarsa (end)
+
+% section reinforcement_learning (end)
+
+\begin{equation}
+	\apply{V}{S_{t}} \gets \apply{V}{S_{t}} + \alpha \brkt{G_{t}- \apply{V}{S_{t}}}
+\end{equation}
+
+\begin{equation}
+	\apply{V}{S_{t}} \gets \apply{V}{S_{t}} + \alpha \applyb{\expect_{\pi}}{R_{t+1} + \gamma\apply{V}{S_{t+1}}-\apply{V}{S_{t}}}
+\end{equation}
+
+\begin{align*}
+	G_{t} &= R_{t} + \gamma G_{t+1} \\
+		& = R_{t} + \gamma R_{t+1} + \gamma^{2} G_{t+2} \\
+		& = \sum_{k=t}^{T} \gamma^{k-t} R_{k}
+\end{align*}
+
+\begin{equation}
+	\apply{V}{S_{t}} \gets \apply{V}{S_{t}} + \alpha \brkt{R_{t+1} + \gamma \apply{V}{S_{t+1}} - \apply{V}{S_{t}}}
+\end{equation}
+
+\newpage
+
+\section{Exercise 6.1} % (fold)
+\label{sec:exercise_6_1}
+
+% section exercise_6_1 (end)
+
+\begin{equation*}
+	\apply{V_{t+1}}{S_{t}}\gets \apply{V_{t}}{S_{t}}+\sigma\brkt{R_{t+1}+\gamma \apply{V_{t}}{S_{t+1}} - \apply{V_{t}}{S_{t}}}
+\end{equation*}
+
+\begin{equation*}
+	\delta_{t} \define R_{t+1}+\gamma \apply{V_{t}}{S_{t+1}} - \apply{V_{t}}{S_{t}}
+\end{equation*}
+
+\begin{equation*}
+	\psi_{t+1} \define \apply{V_{t+1}}{S_{t+1}} - \apply{V_{t}}{S_{t+1}}
+\end{equation*}
+
+\begin{align*}
+	G_{t} -  \apply{V_{t}}{S_{t}} &= R_{t+1}+\gamma G_{t+1} - \apply{V_{t}}{S_{t}} + \gamma\apply{V_{t+1}}{S_{t+1}} - \gamma\apply{V_{t+1}}{S_{t+1}} + \gamma\apply{V_{t}}{S_{t+1}} - \gamma\apply{V_{t}}{S_{t+1}} \\
+	&= \delta_{t} + \gamma\prth{G_{t+1} -\apply{V_{t+1}}{S_{t+1}}} + \gamma \psi_{t+1} \\
+	& = \delta_{t} + \gamma \delta_{t+1} + \gamma^{2}\prth{G_{t+2} -\apply{V_{t+2}}{S_{t+2}}} + \gamma \psi_{t+1}+ \gamma^{2} \psi_{t+2} \\
+	& = \delta_{t} + \gamma \delta_{t+1} + \dots + \gamma^{T-t-1} \delta_{T-1} + \gamma^{T-t} \prth{ G_{T} - \apply{V_{T}}{S_{T}} } + \gamma \psi_{t+1} + \gamma^{2} \psi_{t+2} \dots + \gamma^{T-t} \psi_{T} \\
+	& = \delta_{t} + \gamma \delta_{t+1} + \dots + \gamma^{T-t-1} \delta_{T-1} + \gamma^{T-t} \prth{ 0- 0 } + \gamma \psi_{t+1} + \gamma^{2} \psi_{t+2} \dots + \gamma^{T-t} \psi_{T} \\
+	& = \sum_{k=t}^{T-1} \gamma^{k-t}\delta_{k} + \sum_{k=t}^{T-1} \gamma^{k-t+1} \psi_{k+1}  \\
+	& = \sum_{k=t}^{T-1} \gamma^{k-t}\delta_{k} + \sum_{k=t}^{T-1} \gamma^{k-t+1} \prth{\apply{V_{k+1}}{S_{k+1}} - \apply{V_{k}}{S_{k+1}}} \\
+	& = \sum_{k=t}^{T-1} \gamma^{k-t}\prth{\delta_{k}+\gamma\prth{\apply{V_{k+1}}{S_{k+1}} - \apply{V_{k}}{S_{k+1}}}}
+\end{align*}
+
+\begin{equation}
+	\mathfrak{E}
+\end{equation}
+	
+\end{document}

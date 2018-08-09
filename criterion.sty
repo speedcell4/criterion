@@ -1,0 +1,149 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{criterion}
+
+\RequirePackage{amsmath, amsbsy, amstext, amscd, amsxtra, amsopn, amssymb}
+\everymath{\displaystyle}
+\delimitershortfall=-1pt
+
+\RequirePackage{bbm}
+\RequirePackage{adjustbox}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+% \renewcommand{\in}{\,\in\,}
+
+\newcommand{\prth}[1]{\left(#1\right)}
+\newcommand{\brkt}[1]{\left[#1\right]}
+\newcommand{\crly}[1]{\left\{#1\right\}}
+
+
+\newcommand{\applyp}[2]{#1\!\prth{#2}}
+\newcommand{\applyb}[2]{#1\brkt{#2}}
+\newcommand{\apply}{\applyp}
+
+% Variables
+
+\newcommand{\mathlarge}[1]{\adjustbox{stack=cc}{\mbox{\large$#1$}}}
+\newcommand{\mathLarge}[1]{\adjustbox{stack=cc}{\mbox{\Large$#1$}}}
+\newcommand{\mathLARGE}[1]{\adjustbox{stack=cc}{\mbox{\LARGE$#1$}}}
+\newcommand{\mathhuge}[1]{\adjustbox{stack=cc}{\mbox{\huge$#1$}}}
+\newcommand{\mathHuge}[1]{\adjustbox{stack=cc}{\mbox{\Huge$#1$}}}
+
+\DeclareMathOperator{\expect}{\mathop{\mathLarge{\mathbb{E}}}}
+% \DeclareMathOperator{\conv}{\mathop{\mathLarge{\mathbb{C}}}}
+% \DeclareMathOperator*{\expect}{\mathop{\adjustbox{stack=cc}{\mbox{\huge$\mathbb{E}$}}}}
+
+\newcommand{\ve}[1]{\mathbf{#1}}
+\newcommand{\ma}[1]{\mathbf{#1}}
+\newcommand{\ts}[1]{\mathsf{#1}}
+
+\newcommand{\enum}[1]{\crly{#1}}
+\newcommand{\range}[2]{\crly{#1,\dots,#2}}
+
+\newcommand{\set}[1]{\mathcal{#1}}
+
+\newcommand{\bin}{\mathbbm{1}}
+\newcommand{\nat}{\set{N}}
+\newcommand{\real}{\set{R}}
+
+% Calculus
+
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\pdn}[3]{\dfrac{\partial^{#3} #1}{\partial {#2}^{#3}}}
+\newcommand{\pds}[3]{\dfrac{\partial^2 #1}{\partial #2\,\partial #3}}
+
+% Statistics
+
+\newcommand{\pr}[1]{\apply{p}{#1}}
+\newcommand{\pc}[2]{\apply{p}{#1\mid #2}}
+
+\DeclareMathOperator*{\argmax}{\mathrm{argmax}~}
+\DeclareMathOperator*{\argmin}{\mathrm{argmin}~}
+
+% \DeclareMathOperator*{\enc}{\mathrm{enc}~}
+% \DeclareMathOperator*{\dec}{\mathrm{dec}~}
+
+% \newcommand{\argmax}[2]{\underset{#2}{\operatorname{argmax}}~{#1}}
+% \newcommand{\argmin}[2]{\underset{#2}{\operatorname{argmin}}~{#1}}
+
+\newcommand{\obey}{\mathrel{\sim}} 
+\newcommand{\sample}{\mathrel{\sim}}
+\newcommand{\define}{\mathrel{\doteq}}
+\newcommand{\generate}{\mathrel{\leftarrow}}
+\newcommand{\shuffle}{\mathrel{\reflectbox{$\leadsto$}}}
+% \newcommand{\shuffle}{\mathrel{\leftsquigarrow}}
+
+% linear algebra
+
+% T -> T -> T :: elementwise
+
+\newcommand{\debugwidth}[1]{#1 \tag{\setbox0=\hbox{$#1$} \the\wd0}}
+
+\newcommand{\ewadd}{\oplus}
+\newcommand{\ewsub}{\ominus}
+\newcommand{\ewmul}{\odot}
+\newcommand{\ewdiv}{\oslash}
+
+% TODO fix this width
+% \newcommand{\conv}{\mathbin{*}}
+
+% W -> V -> V
+
+\newcommand{\mvmul}{\mathbin{\cdot}}
+
+\newcommand{\tr}{\!\top}
+\newcommand{\inv}{\!\text{-}1}
+\newcommand{\invtr}{\text{-}\!\top}
+
+% distributions
+
+\newcommand{\sigmoid}{\sigma}
+
+\newcommand{\softmax}[3]{\dfrac{\apply{\exp}{#1{#2}}}{\sum_{#2^{\mathrm{\prime}}\,\in\,#3} \apply{\exp}{#1{#2^{\mathrm{\prime}}}}}}
+
+% Neural Networks
+
+\newcommand{\relu}[1]{\apply{\max}{\ve{0},#1}}
+
+\newcommand{\cat}[1]{\,\Vert^{#1}\,}
+
+\newcommand{\isin}{\,\in\,}
+
+\newcommand{\ind}[1]{\applyb{\mathbbm{1}}{#1}}
+
+\newcommand{\shape}[1]{[#1]}
+
+\newcommand{\linearnb}[2]{\ma{W}_{\!#2}\mvmul#1}
+\newcommand{\linear}[2]{\linearnb{#1}{#2}+\ve{b}_{#2}}
+
+\newcommand{\convnb}[3]{\ma{W}_{\!#3}^{\shape{#1}}\mathop{\ast}#2}
+\newcommand{\conv}[3]{\convnb{#1}{#2}{#3}+\ve{b}_{#3}}
+
+\newcommand{\pred}[1]{\hat{#1}}
+\newcommand{\optm}[1]{#1^{\ast}}
+\newcommand{\local}[1]{\tilde{#1}}
+\newcommand{\idx}[1]{#1^{\prime}}
+
+% \newcommand{\vvcon}{*}
+
+% \newcommand{\pred}[1]{\hat{#1}}
+% \newcommand{\target}[1]{\hat{#1}}
+
+\newcommand{\uniform}[2]{\apply{\mathcal{U}}{#1,#2}}
+\newcommand{\binomial}[2]{\apply{\mathcal{B}}{#1,#2}}
+\newcommand{\bernoulli}[1]{\binomial{1}{#1}}
+\newcommand{\gaussian}[2]{\apply{\mathcal{N}}{#1,#2}}
+\newcommand{\categorial}[1]{\apply{\mathcal{C}}{#1}}
+
+\newcommand{\reduceset}[4]{#4_{#2\isin#3}{\apply{#1}{#2}}}
+\newcommand{\maxset}[3]{\reduceset{#1}{#2}{#3}{\max}}
+\newcommand{\minset}[3]{\reduceset{#1}{#2}{#3}{\min}}
+\newcommand{\sumset}[3]{\reduceset{#1}{#2}{#3}{\sum}}
+\newcommand{\avgset}[3]{\cfrac{1}{\vert #3 \vert}\,\sumset{#1}{#2}{#3}}
+
+\newcommand{\mapset}[3]{\crly{\apply{#1}{#2}\mid #2\isin#3}}
+
+\newcommand{\aprx}{\mathrel{\mapsto}}
+
+\endinput
